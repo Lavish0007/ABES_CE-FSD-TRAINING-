@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Booking System</title>
+    <style>
+      /* ---------- Global Styles ---------- */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* ---------- Navbar ---------- */
+      nav {
+        background-color: red;
+        height: 80px;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 700;
+      }
+      nav img {
+        height: 60px;
+        border-radius: 50%;
+        margin: 10px 40px 0 40px;
+      }
+
+      /* ---------- Intro Text ---------- */
+      .intro {
+        font-weight: 600;
+        font-size: 30px;
+        margin: 15px 0;
+        text-align: center;
+      }
+
+      /* ---------- Main Section ---------- */
+      .sec {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .main {
+        height: 400px;
+        width: 650px;
+        border: 5px solid black;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+      }
+
+      /* ---------- Form Styling ---------- */
+      .details label {
+        display: block;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+      .details input,
+      .details select {
+        margin-top: 5px;
+        padding: 5px;
+        width: 100%;
+        max-width: 250px;
+      }
+
+      /* ---------- Photo Styling ---------- */
+      .photo img {
+        height: 200px;
+        border: 2px solid black;
+        border-radius: 5px;
+      }
+
+      /* ---------- Button Styling ---------- */
+      button {
+        margin-top: 15px;
+        padding: 8px 15px;
+        color: white;
+        background-color: rgb(47, 47, 252);
+        font-weight: 600;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: transform 0.2s ease-in;
+      }
+      button:hover {
+        transform: scale(1.1);
+      }
+   
+.gender-options {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+  margin-top: 5px;
+}
+.gender-options label {
+  font-weight: normal;
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="nav">
+        <img
+          src="https://images.seeklogo.com/logo-png/34/1/redbus-logo-png_seeklogo-347983.png"
+          alt="RedBus Logo"
+        />
+        <h1>Red Bus</h1>
+      </div>
+    </nav>
+
+    <!-- Intro -->
+    <div class="intro">* Welcome to Bus Booking System *</div>
+
+    <!-- Booking Section -->
+    <section class="sec">
+      <div class="main">
+        <!-- Form -->
+        <div class="details">
+          <form action="">
+            <label>User Name</label>
+            <input type="text" />
+
+            <label>User Password</label>
+            <input type="password" />
+
+            <label>Select your gender</label>
+            <div class="gender-options">
+              <input type="radio" name="gen" id="male" />
+              <label for="male">Male</label>
+
+              <input type="radio" name="gen" id="female" />
+              <label for="female">Female</label>
+            </div>
+
+            <label>Select your city</label>
+            <select>
+              <option value="" disabled selected>Choose your city</option>
+              <option value="meerut">Meerut</option>
+              <option value="noida">Noida</option>
+              <option value="delhi">Delhi</option>
+            </select>
+
+            <a href="ass2b.html">
+              <button type="button">Book Seat!</button>
+            </a>
+          </form>
+        </div>
+
+        <!-- Image -->
+        <div class="photo">
+          <img
+            src="https://etimg.etb2bimg.com/photo/75823659.cms"
+            alt="Bus Image"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
