@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="txt">
+
+    </p>
+    <script>
+        
+        var a=10;
+        var b=20;
+        var c=30;
+        if(a>b && a>c){
+          document.getElementById("txt").innerHTML=' <center><h1 style="font-size: 100px; color: blue;">A is the greatest!</h1></center>';
+          
+        }
+        else if(b>c && b>a){
+            document.getElementById("txt").innerHTML=' <center><h1 style="font-size: 100px; color: blue;">B is the greatest!</h1></center>';
+        }
+        else{
+            document.getElementById("txt").innerHTML=' <center><h1 style="font-size: 100px; color: blue;">C is the greatest!</h1></center>';
+        }
+    </script>
+</body>
+</html>
