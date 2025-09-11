@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 700px;
+            background: linear-gradient(to right, #2f86ff, #dd2476);
+
+        }
+        .card{
+            padding: 10px;
+            background-color: white;
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 5px 5px 2px 2px gray;
+
+
+
+        }
+        .head img{
+            width: 100px;
+        }.head{
+            display: flex;
+            height: 110px;
+            align-items:center ;
+            justify-content: space-evenly;
+        }
+        .button{
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+        button{
+            padding: 15px 20px;
+            margin-left: 20px;
+            
+        }
+        .button{
+            margin: 50px;
+        }
+        .count{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="head">
+            <img src="https://img.freepik.com/premium-vector/realistic-classic-stopwatch-time-counter-with-dial-shiny-metal-chronometer-countdown-timer-minutes_213497-2617.jpg" alt="">
+            <h1>COUNTER APP</h1>
+        </div>
+        <div class="content">
+            <p class="count">
+                0
+            </p>
+            <div class="button my-5">
+
+                <button onclick="decrement()">Decrease</button>
+                <button onclick="increment()">Increase</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        let count = 0;
+        function updateCount() {
+            document.querySelector('.count').textContent = count;
+        }
+        function increment() {
+            if (count >= 10) {
+                alert("Count cannot be greater than 10");
+                return;
+            }
+            else {
+                count++;
+                updateCount();
+            }
+
+        }
+        function decrement() {
+            if (count <= 0) {
+                alert("Count cannot be less than 0");
+                return;
+            }
+            else {
+                count--;
+                updateCount();
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
