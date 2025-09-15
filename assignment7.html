@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Data Cards</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #a6c4f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .card-container {
+        display: flex;
+        gap: 25px;
+        padding: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card {
+        flex: 1;
+        min-width: 300px;
+        max-width: 450px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      
+
+      .card h2 {
+        text-align: center;
+        color: #1e3a8a;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        border-bottom: 2px solid #1e3a8a;
+        padding-bottom: 10px;
+      }
+
+      .card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .card li {
+        padding: 12px 0;
+        border-bottom: 1px solid #e5e7eb;
+        font-size: 1rem;
+        color: #4b5563;
+      }
+
+      .card li:last-child {
+        border-bottom: none;
+      }
+
+      .student-data {
+        font-weight: bold;
+        color: #3b82f6;
+      }
+
+      .student-details {
+        font-size: 0.9rem;
+        margin-top: 5px;
+        padding-left: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="card" id="common-card">
+        <h2>Common Branch Students</h2>
+        <ul id="common-list"></ul>
+      </div>
+
+      <div class="card" id="uncommon-card">
+        <h2>Uncommon Branch Students</h2>
+        <ul id="uncommon-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      const Student1 = {
+        firstname: "Rajesh",
+        Class: "CSE",
+        RollNo: 456,
+        Section: "A",
+        Position: "Head",
+      };
+      const Student2 = {
+        firstname: "Aman",
+        Class: "CSE",
+        RollNo: 402,
+        Section: "A",
+        Position: "Treasurer",
+      };
+      const Student3 = {
+        firstname: "Jay",
+        Class: "CSE",
+        RollNo: 463,
+        Section: "A",
+        Position: "Manager",
+      };
+      const Student4 = {
+        firstname: "Arpit",
+        Class: "AIML",
+        RollNo: 780,
+        Section: "C",
+        Position: "Treasurer",
+      };
+      const Student5 = {
+        firstname: "Amit",
+        Class: "CE",
+        RollNo: 401,
+        Section: "C",
+        Position: "Manager",
+      };
+
+      const students = [Student1, Student2, Student3, Student4, Student5];
+      const commonCardUl = document.getElementById("common-list");
+      const uncommonCardUl = document.getElementById("uncommon-list");
+
+      const branchCounts = {};
+      students.forEach(student => {
+        branchCounts[student.Class] = (branchCounts[student.Class] || 0) + 1;
+      });
+
+      const commonBranches = Object.keys(branchCounts).filter(branch => branchCounts[branch] > 1);
+      const uncommonBranches = Object.keys(branchCounts).filter(branch => branchCounts[branch] === 1);
+
+      function createStudentListItem(student) {
+        return `
+          <li>
+            <span class="student-data">${student.firstname}</span>
+            <div class="student-details">
+              Branch: ${student.Class}<br>
+              Roll No: ${student.RollNo}<br>
+              Section: ${student.Section}<br>
+              Position: ${student.Position}
+            </div>
+          </li>
+        `;
+      }
+
+      const commonStudents = students.filter(student => commonBranches.includes(student.Class));
+      commonCardUl.innerHTML = commonStudents.map(createStudentListItem).join("");
+
+      const uncommonStudents = students.filter(student => uncommonBranches.includes(student.Class));
+      uncommonCardUl.innerHTML = uncommonStudents.map(createStudentListItem).join("");
+    </script>
+  </body>
+</html>
