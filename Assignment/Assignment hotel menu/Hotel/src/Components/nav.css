@@ -1,0 +1,9 @@
+#fotr{
+    padding: 20px;
+    min-width:1450px;
+    height: 70px;
+    background-color: #1f53d6;
+    display: flex;
+    align-items: center;
+    color: white;
+}

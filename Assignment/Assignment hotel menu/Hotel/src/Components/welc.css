@@ -1,0 +1,17 @@
+.welc {
+  text-align: center;
+  background-color: #f2f5ff;
+  padding: 40px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.welc h1 {
+  color: #1f53d6;
+  font-size: 2rem;
+}
+
+.welc h3 {
+  color: #333;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,14 @@
+#card1 {
+    margin-left: 40%;
+    width: 350px;
+    height: 450px;
+    border: 5px solid #000;
+    border-radius: 20px;             
+    display: flex;                    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(232, 232, 232);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+}
